@@ -1,0 +1,252 @@
+:root {
+  --dark-blue: #363f5f;
+  --grenn: #49AA26;
+  --light-green: #3dd705;
+  --red: #e92929;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+html{
+	 font-size: 93.75%; /* 15px */
+}
+body {
+  background-color: #f0f2f5;
+  font-family: "Poppins", sans-serif;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-width: 0px;
+}
+.conteiner {
+  width: min(90vw, 800px);
+  margin: auto;
+}
+h2 {
+  margin: 3.2rem 0rem 0.8rem;
+  color: var(--dark-blue);
+  font-weight: normal;
+}
+/* ================= Button ================= */
+a {
+  color: var(--grenn);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--light-green);
+}
+button{
+	width: 100%;
+	height: 50px;
+
+	border: none;
+	border-radius: 0.25rem;
+
+	color: white;
+	background-color: var(--grenn);
+
+	padding: 0;
+
+	cursor: pointer;
+}
+button:hover{
+	background-color:var(--light-green);
+}
+.button.new{
+	display: inline-block;
+	margin-bottom: .8rem;
+}
+.button.cancel{
+	color: var(--red);
+	border: 2px var(--red) solid;
+
+	height: 50px;
+
+	display: flex;
+	align-items: center;
+	justify-content:center;
+}
+.button.cancel:hover{
+	opacity: 0.6;
+}
+/* ================= Header ================= */
+header {
+  background-color: #2d4a22;
+  padding: 2rem 0rem 10rem;
+  text-align: center;
+}
+#logo {
+  color: #fff;
+  font-weight: 100;
+}
+
+/* ================= Main ================= */
+#balance {
+  margin-top: -7rem;
+}
+#balance h2 {
+  color: #fff;
+  margin-top: 0px;
+}
+
+/* ================= Main-Card ================= */
+.card {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  color: var(--dark-blue);
+}
+.card h3 {
+  font-size: 1rem;
+  font-weight: normal;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card p {
+  font-size: 2rem;
+}
+.card.total {
+  background-color: var(--grenn);
+  color: #fff;
+}
+
+/* ================= Transactions ================= */
+#transactions{
+	display: block;
+	overflow-x: auto;
+	width: 100%;
+}
+#data-table {
+  width: 100%;
+  border-spacing: 0 0.5rem;
+  color: #989cb3;
+}
+
+table thead th:first-child,
+table tbody td:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+table thead th:last-child,
+table tbody td:last-child{
+	border-radius: 0rem 0.25rem 0.25rem 0rem;
+}
+table tbody tr {
+  opacity: 0.7;
+}
+
+table tbody tr:hover {
+  opacity: 1;
+}
+
+table th {
+  background-color: #fff;
+  font-weight: normal;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+table td {
+  background-color: white;
+  padding: 1rem 2rem;
+}
+td.description {
+  color: var(--dark-blue);
+}
+td.income {
+  color: #12a454;
+}
+td.expense {
+  color: #e92929;
+}
+/* ================= Modal ================= */
+.modal-overlay{
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(0, 0, 0, 0.7);
+
+	position: fixed;
+  top: 0;
+  z-index: 999;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	opacity: 0;
+	visibility: hidden;
+}
+.modal-overlay.active{
+	opacity: 1;
+	visibility: visible;
+}
+.modal{
+	background-color: #f0f2f5;
+	padding: 2.4rem;
+	width: 90%;
+  max-width: 500px;
+  
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= form ================= */
+#form{
+	max-width: 500px;
+}
+#form h2{
+	margin-top: 0;
+}
+#form form input{
+	border: none;
+	border-radius: 0.2rem;
+
+	padding: 0.8rem;
+
+	width: 100%;
+}
+.input-group{
+	margin-top: 0.8rem;
+}
+.input-group small{
+	opacity: 0.4;
+}
+.input-group.actions{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button{
+	width: 48%;
+}
+
+/* ================= footer ================= */
+footer {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  color: var(--dark-blue);
+  opacity: 0.6;
+}
+/* ================= Responsive ================= */
+@media(min-width: 800px){
+	html{
+		font-size: 87.5%;
+	}
+	#balance{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+}

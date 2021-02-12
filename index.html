@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dev.Financeiro$</title>
+  </head>
+
+  <body>
+    <header>
+      <img src="./assets/logo.svg" alt="Logo Dev Financeiro" />
+    </header>
+
+    <main class="conteiner">
+      <section id="balance">
+        <h2 class="sr-only">Balanço</h2>
+
+        <div class="card">
+          <h3>
+            <span>Entradas</span>
+            <img src="./assets/income.svg" alt="imagem de Entradas" />
+          </h3>
+          <p id="incomeDisplay"></p>
+        </div>
+
+        <div class="card">
+          <h3>
+            <span>Saidas</span>
+            <img src="./assets/expense.svg" alt="imagem de Saidas" />
+          </h3>
+          <p id="expenseDisplay"></p>
+        </div>
+
+        <div class="card total">
+          <h3>
+            <span>Total</span>
+            <img src="./assets/total.svg" alt="imagem de Total" />
+          </h3>
+          <p id="totalDisplay"></p>
+        </div>
+      </section>
+
+      <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a>
+
+      <section id="transactions">
+        <h2 class="sr-only">Transações</h2>
+
+        <table id="data-table">
+          <tr>
+            <thead>
+              <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+				
+            </tbody>
+          </tr>
+        </table>
+      </section>
+    </main>
+
+    <div class="modal-overlay">
+      <div class="modal">
+        <div id="form">
+          <h2>Nova Transação</h2>
+          <form action="" onsubmit="Form.submit(event)">
+            <div class="input-group">
+              <label class="sr-only" for="description">Descrição</label>
+              <input
+                id="description"
+                name="description"
+                placeholder="Descrição"
+                type="text"
+              />
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="amount">Valor</label>
+              <input
+                id="amount"
+                name="amount"
+                placeholder="0,00"
+                type="number"
+                step="0.01"
+              />
+              <small class="help"
+                >Use o sinal - (negativo) para despesas e , (virgula) para casas
+                decimais</small
+              >
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="date">Data</label>
+              <input id="date" name="date" placeholder="date" type="date" />
+            </div>
+
+            <div class="input-group actions">
+              <a href="#" class="button cancel" onclick="Modal.close()"
+                >Cancelar</a
+              >
+              <button type="submit">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Dev.Finarceiro$</p>
+    </footer>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
+
